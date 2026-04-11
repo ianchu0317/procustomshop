@@ -41,6 +41,15 @@ body {
     color: var(--text-light) !important;
     font-weight: 700;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-navbar {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .navbar-dark .nav-link {
