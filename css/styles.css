@@ -1,0 +1,206 @@
+/* ==========================================
+   VARIABLES Y COLORES PRINCIPALES
+   ========================================== */
+
+:root {
+    --dark-blue: #1a2a3a;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --primary-color: #007bff;
+}
+
+
+/* ==========================================
+   ESTILOS GLOBALES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+}
+
+
+/* ==========================================
+   NAVBAR PERSONALIZADA
+   ========================================== */
+
+.bg-dark-custom {
+    background-color: var(--dark-blue) !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+   ========================================== */
+
+main {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   SECCIÓN HERO
+   ========================================== */
+
+.hero-section {
+    padding: 3rem 0;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-section h1 {
+    color: var(--text-dark);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem !important;
+}
+
+.hero-section .lead {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem !important;
+}
+
+.hero-section .btn {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+
+/* ==========================================
+   SECCIÓN DE CONTENIDO
+   ========================================== */
+
+.content-section {
+    padding: 2rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--text-light);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(26, 42, 58, 0.15) !important;
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card-text {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   ANIMACIONES
+   ========================================== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 1rem !important;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+    }
+}
