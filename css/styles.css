@@ -23,7 +23,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: #ffffff;
     background-image: url('../images/wallpaper2.png');
     background-attachment: fixed;
     background-size: cover;
@@ -114,7 +114,7 @@ main {
 }
 
 .hero-section h1 {
-    color: var(--text-dark);
+    color: #ffffff;
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 1rem !important;
@@ -123,7 +123,7 @@ main {
 
 .hero-section .lead {
     font-size: 1.3rem;
-    color: var(--text-dark);
+    color: #ffffff;
     margin-bottom: 2rem !important;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
@@ -190,13 +190,13 @@ main {
 
 .card-title {
     font-weight: 700;
-    color: var(--text-dark);
+    color: #ffffff;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
 .card-text {
-    color: var(--text-dark);
+    color: #ffffff;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -223,7 +223,7 @@ main {
    ========================================== */
 
 .section-title {
-    color: var(--text-dark);
+    color: #ffffff;
     font-size: 2.5rem;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
     margin-bottom: 2rem !important;
@@ -276,7 +276,7 @@ main {
 }
 
 .catalog-info h5 {
-    color: var(--text-dark);
+    color: #ffffff;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -315,13 +315,13 @@ main {
 }
 
 .location-card h4 {
-    color: var(--text-dark);
+    color: #ffffff;
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .location-card p {
-    color: var(--text-dark);
+    color: #ffffff;
     margin-bottom: 0.8rem;
     font-weight: 500;
 }
