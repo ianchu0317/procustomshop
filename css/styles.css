@@ -24,7 +24,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: #f8f9fa;
+    background-image: url('../images/wallpaper.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0a0520;
+    min-height: 100vh;
 }
 
 
@@ -70,8 +76,9 @@ body {
    ========================================== */
 
 main {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.50);
     min-height: calc(100vh - 56px);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
 }
 
 .container {
@@ -87,6 +94,9 @@ main {
 .hero-section {
     padding: 3rem 0;
     animation: fadeInDown 0.8s ease-out;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 3rem;
 }
 
 .hero-section h1 {
@@ -127,7 +137,9 @@ main {
     border: none;
     border-radius: 8px;
     transition: all 0.3s ease;
-    background-color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
