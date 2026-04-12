@@ -23,7 +23,7 @@
 body {
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #ffffff;
+    color: #000000;
     background-color: #ffffff;
     min-height: 100vh;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .bg-dark-custom {
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(0, 0, 0, 1) !important;
 }
 
 .navbar-brand {
@@ -211,13 +211,13 @@ main {
 
 .card-title {
     font-weight: 700;
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
 .card-text {
-    color: #ffffff;
+    color: #505050;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -244,9 +244,9 @@ main {
    ========================================== */
 
 .section-title {
-    color: #ffffff;
+    color: #505050;
     font-size: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
     margin-bottom: 2rem !important;
 }
 
@@ -297,7 +297,7 @@ main {
 }
 
 .catalog-info h5 {
-    color: #ffffff;
+    color: #505050;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -336,13 +336,13 @@ main {
 }
 
 .location-card h4 {
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
 }
 
 .location-card p {
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 0.8rem;
     font-weight: 500;
 }
