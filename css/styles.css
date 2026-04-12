@@ -3,7 +3,7 @@
    ========================================== */
 
 :root {
-    --dark-blue: #020221;
+    --dark-blue: #000000;
     --text-dark: #1a1a1a;
     --text-light: #ffffff;
     --primary-color: #007bff;
@@ -39,7 +39,7 @@ body {
    ========================================== */
 
 .bg-dark-custom {
-    background-color: var(--dark-blue) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .navbar-brand {
@@ -76,7 +76,7 @@ body {
    ========================================== */
 
 main {
-    background-color: rgba(248, 249, 250, 0.25);
+    background-color: rgba(248, 249, 250, 0.010);
     min-height: calc(100vh - 56px);
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
 }
@@ -94,7 +94,8 @@ main {
 .hero-section {
     padding: 3rem 0;
     animation: fadeInDown 0.8s ease-out;
-    background: rgba(255, 255, 255, 0.40);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(7px);
     border-radius: 10px;
     padding: 3rem;
 }
@@ -139,7 +140,7 @@ main {
     border: none;
     border-radius: 8px;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.60);
+    background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
