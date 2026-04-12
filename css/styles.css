@@ -244,11 +244,94 @@ main {
     }
 }
 
+/* ==========================================
+   CARRUSEL DE CATÁLOGO
+   ========================================== */
+
+.carousel-img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(0.65);
+}
+
+.carousel-caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.carousel-card-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+}
+
+.carousel-card-info h5 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.carousel-card-info .price {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.carousel-card-info .btn {
+    flex-shrink: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #6c757d;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.6;
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 300px;
+    }
+
+    .carousel-card-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .carousel-card-info h5 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-card-info .price {
+        font-size: 1rem;
+    }
+}
 
 /* ==========================================
    SECCIÓN CATÁLOGO
    ========================================== */
 
+/*
 .section-title {
     color: #505050;
     font-size: 2.5rem;
@@ -318,7 +401,7 @@ main {
 .catalog-info .btn {
     width: 100%;
 }
-
+*/
 
 /* ==========================================
    SECCIÓN UBICACIÓN
