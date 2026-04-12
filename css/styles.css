@@ -6,7 +6,7 @@
     --dark-blue: #000000;
     --text-dark: #ffffff;
     --text-light: #ffffff;
-    --primary-color: #007bff;
+    --primary-color: #6c757d;
 }
 
 
@@ -125,6 +125,31 @@ main {
 .hero-section .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+
+/* ==========================================
+   BOTONES PERSONALIZADOS
+   ========================================== */
+
+.btn-primary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+.btn-primary:active {
+    background-color: #495057;
+    border-color: #495057;
 }
 
 
