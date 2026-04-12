@@ -38,6 +38,18 @@ body {
    NAVBAR PERSONALIZADA
    ========================================== */
 
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
+}
+
 .bg-dark-custom {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
@@ -79,6 +91,7 @@ main {
     background-color: rgba(248, 249, 250, 0.010);
     min-height: calc(100vh - 56px);
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
+    margin-top: 56px;
 }
 
 .container {

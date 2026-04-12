@@ -7,7 +7,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Aquí puedes agregar funcionalidades interactivas
     setupEventListeners();
+    setupNavbarHideOnScroll();
 });
+
+/* ==========================================
+   CONFIGURAR NAVBAR PARA OCULTARSE AL SCROLL
+   ========================================== */
+
+function setupNavbarHideOnScroll() {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = 0;
+    let scrollTimeout;
+
+    window.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY;
+
+        // Mostrar navbar si estamos en el top
+        if (currentScrollY <= 0) {
+            navbar.classList.remove('navbar-hidden');
+            return;
+        }
+
+        // Si scrolleamos hacia abajo, ocultar navbar
+        if (currentScrollY > lastScrollY) {
+            navbar.classList.add('navbar-hidden');
+        } 
+        // Si scrolleamos hacia arriba, mostrar navbar
+        else {
+            navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+    });
+}
 
 /* ==========================================
    CONFIGURAR LISTENERS DE EVENTOS
