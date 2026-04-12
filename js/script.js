@@ -59,16 +59,21 @@ function setupEventListeners() {
     const navLinks = document.querySelectorAll('.navbar-nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const href = this.getAttribute('href');
             
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            // Solo prevenir comportamiento por defecto si es un ancla local
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
+            // Si es un enlace externo (http/https), permitir navegación normal
         });
     });
 }
