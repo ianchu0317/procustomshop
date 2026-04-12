@@ -181,7 +181,130 @@ main {
 
 
 /* ==========================================
-   RESPONSIVE DESIGN
+   SECCIÓN CATÁLOGO
+   ========================================== */
+
+.section-title {
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem !important;
+}
+
+.catalog-section {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catalog-card {
+    background-color: rgba(255, 255, 255, 0.30);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.catalog-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.40);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.catalog-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .catalog-image img {
+    transform: scale(1.1);
+}
+
+.catalog-info {
+    padding: 1.5rem;
+}
+
+.catalog-info h5 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.catalog-info .price {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.catalog-info .btn {
+    width: 100%;
+}
+
+
+/* ==========================================
+   SECCIÓN UBICACIÓN
+   ========================================== */
+
+.location-section {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.location-card {
+    background-color: rgba(255, 255, 255, 0.30);
+    border: none;
+    border-radius: 10px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.location-card h4 {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.location-card p {
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   ANIMACIONES
    ========================================== */
 
 @media (max-width: 768px) {
