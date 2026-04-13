@@ -23,13 +23,8 @@
 body {
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #ffffff;
-    background-image: url('../images/wallpaper2.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #0a0520;
+    color: #000000;
+    background-color: #ffffff;
     min-height: 100vh;
 }
 
@@ -51,7 +46,7 @@ body {
 }
 
 .bg-dark-custom {
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(0, 0, 0, 1) !important;
 }
 
 .navbar-brand {
@@ -88,10 +83,11 @@ body {
    ========================================== */
 
 main {
-    background-color: rgba(248, 249, 250, 0.010);
+    background-color: #ffffff;
     min-height: calc(100vh - 56px);
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
     margin-top: 56px;
+    position: relative;
+    z-index: 0;
 }
 
 .container {
@@ -105,12 +101,36 @@ main {
    ========================================== */
 
 .hero-section {
-    padding: 3rem 0;
-    animation: fadeInDown 0.8s ease-out;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(7px);
-    border-radius: 10px;
-    padding: 3rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/wallpaper2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    margin-top: 56px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .hero-section h1 {
@@ -118,14 +138,15 @@ main {
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 1rem !important;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3.5rem;
 }
 
 .hero-section .lead {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #ffffff;
     margin-bottom: 2rem !important;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section .btn {
@@ -175,28 +196,34 @@ main {
 }
 
 .card {
+    background-color: rgba(208, 202, 202, 0.3);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
+    overflow: hidden;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(26, 42, 58, 0.15) !important;
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.40);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    text-align: center;
 }
 
 .card-title {
     font-weight: 700;
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
 .card-text {
-    color: #ffffff;
+    color: #505050;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -217,15 +244,98 @@ main {
     }
 }
 
+/* ==========================================
+   CARRUSEL DE CATÁLOGO
+   ========================================== */
+
+.carousel-img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(0.65);
+}
+
+.carousel-caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.carousel-card-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+}
+
+.carousel-card-info h5 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.carousel-card-info .price {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.carousel-card-info .btn {
+    flex-shrink: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #6c757d;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.6;
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 300px;
+    }
+
+    .carousel-card-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .carousel-card-info h5 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-card-info .price {
+        font-size: 1rem;
+    }
+}
 
 /* ==========================================
    SECCIÓN CATÁLOGO
    ========================================== */
 
+/*
 .section-title {
-    color: #ffffff;
+    color: #505050;
     font-size: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
     margin-bottom: 2rem !important;
 }
 
@@ -276,7 +386,7 @@ main {
 }
 
 .catalog-info h5 {
-    color: #ffffff;
+    color: #505050;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -291,7 +401,7 @@ main {
 .catalog-info .btn {
     width: 100%;
 }
-
+*/
 
 /* ==========================================
    SECCIÓN UBICACIÓN
@@ -315,13 +425,13 @@ main {
 }
 
 .location-card h4 {
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
 }
 
 .location-card p {
-    color: #ffffff;
+    color: #505050;
     margin-bottom: 0.8rem;
     font-weight: 500;
 }
@@ -387,5 +497,72 @@ main {
     .hero-section .btn {
         padding: 0.5rem 1rem;
         font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+   BOTÓN HERO PERSONALIZADO
+   ========================================== */
+
+.hero-section .btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: white;
+    color: #030747;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================== */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-btn:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
     }
 }

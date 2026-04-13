@@ -36,7 +36,10 @@
                         <a class="nav-link active" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#catalogo">Catálogo</a>
+                        <a class="nav-link" href="https://www.mercadolibre.com.ar/pagina/procustomshop#from=share_eshop" target="_blank">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogo">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#ubicacion">Ubicación</a>
@@ -46,22 +49,139 @@
         </div>
     </nav>
 
+    <!-- SECCIÓN HERO FULLSCREEN -->
+    <section class="hero-section text-center">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold text-light mb-3">
+                Bienvenido a ProCustomShop
+            </h1>
+            <p class="lead text-light mb-4">
+                Repuestos premium y accesorios para potenciar tu moto.
+            </p>
+            <button class="btn btn-outline-light btn-lg" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">Ver Productos</button>
+        </div>
+    </section>
+
     <!-- CONTENIDO PRINCIPAL -->
     <main id="home" class="py-5">
         <div class="container">
-            <!-- Sección Hero -->
-            <section class="hero-section text-center mb-5">
-                <h1 class="display-4 fw-bold text-light mb-3">
-                    Bienvenido a ProCustomShop
-                </h1>
-                <p class="lead text-light mb-4">
-                    Las mejores motos y accesorios personalizados para ti
-                </p>
-                <button class="btn btn-primary btn-lg">Explorar Catálogo</button>
+            <!-- Sección de Contenido - Por qué elegirnos -->
+            <section class="content-section mt-5 mb-5">
+                <h2 class="text-center fw-bold mb-5 section-title">¿Qué Ofrecemos?</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Calidad ⚙︎</h5>
+                                <p class="card-text">
+                                    Componentes originales de alta gama con soporte para las marcas líderes del mercado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Personalización 🛠</h5>
+                                <p class="card-text">
+                                    Personaliza tu moto con nuestros exclusivos accesorios y modificaciones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Servicio Premium ᗢ</h5>
+                                <p class="card-text">
+                                    Atención de calidad y garantía en todos nuestros productos y servicios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
             <!-- Sección de Catálogo -->
+<section id="catalogo" class="catalog-section mt-5 mb-5">
+    <h2 class="text-center fw-bold mb-4 section-title">Productos Destacados</h2>
+
+    <div id="catalogCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#catalogCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Moto 1"></button>
+            <button type="button" data-bs-target="#catalogCarousel" data-bs-slide-to="1" aria-label="Moto 2"></button>
+            <button type="button" data-bs-target="#catalogCarousel" data-bs-slide-to="2" aria-label="Moto 3"></button>
+            <button type="button" data-bs-target="#catalogCarousel" data-bs-slide-to="3" aria-label="Moto 4"></button>
+        </div>
+
+        <!-- Items del carrusel -->
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="images/filtro_aire.webp" class="d-block w-100 carousel-img" alt="Filtro Aire">
+                <div class="carousel-caption d-block">
+                    <div class="carousel-card-info">
+                        <h5>Filtro Aire Conico Metalico Para Suzuki Ax100 42mm Lavable</h5>
+                        <a href="https://www.mercadolibre.com.ar/filtro-aire-conico-metalico-para-suzuki-ax100-42mm-lavable/up/MLAU3811640479?pdp_filters=item_id%3AMLA2912038000&matt_tool=89488245#origin=share&sid=share&wid=MLA2912038000&action=copy" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
+                        <p class="price">$23.128</p>
+                        <!-- <button class="btn btn-sm btn-primary">Ver Detalles</button>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/punio_calavera.png" class="d-block w-100 carousel-img" alt="Punio Calavera">
+                <div class="carousel-caption d-block">
+                    <div class="carousel-card-info">
+                        <h5>Puños Calavera Moto Custom Chopera Honda Yamaha Mondial</h5>
+                        <a href="https://www.mercadolibre.com.ar/punos-calavera-moto-custom-chopera-honda-yamaha-mondial/up/MLAU218137151?pdp_filters=item_id%3AMLA615885683&matt_tool=89488245#origin=share&sid=share&wid=MLA615885683&action=copy" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
+                        <p class="price">$33,279</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/faro_cruz.png" class="d-block w-100 carousel-img" alt="Faro Cruz">
+                <div class="carousel-caption d-block">
+                    <div class="carousel-card-info">
+                        <h5>Faro Trasero Stop Cruz Malta Moto Bajaj Avenger Zanella Cecc</h5>
+                        <a href="https://www.mercadolibre.com.ar/faro-trasero-stop-cruz-malta-moto-bajaj-avenger-zanella-cecc/up/MLAU218649181?pdp_filters=item_id%3AMLA755725078&matt_tool=89488245#origin=share&sid=share&wid=MLA755725078&action=copy" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
+                        <p class="price">$40,172</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/faro_giro.png" class="d-block w-100 carousel-img" alt="Faro Giro">
+                <div class="carousel-caption d-block">
+                    <div class="carousel-card-info">
+                        <h5>Faro Acrilico Giro Guiño Para Honda Dax St 70 6v Monkey Z50 X2</h5>
+                        <a href="https://www.mercadolibre.com.ar/acrilico-giro-guino-para-honda-dax-st-70-6v-monkey-z50-x2/up/MLAU3075100741?pdp_filters=item_id%3AMLA2034118650&matt_tool=89488245#origin=share&sid=share&wid=MLA2034118650&action=copy" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
+                        <p class="price">$22,441</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles anterior/siguiente -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#catalogCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#catalogCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+
+    </div>
+</section>
+
+
+            <!-- Sección de Catálogo -->
+<!-- 
             <section id="catalogo" class="catalog-section mt-5 mb-5">
                 <h2 class="text-center fw-bold mb-4 section-title">Catálogo de Motos</h2>
                 <div class="row">
@@ -115,44 +235,9 @@
                     </div>
                 </div>
             </section>
-
-
-            <!-- Sección de Contenido -->
-            <section class="content-section">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title text-light">Motos de Calidad</h5>
-                                <p class="card-text text-light">
-                                    Contamos con una amplia variedad de motos de las mejores marcas del mercado.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title text-light">Personalización</h5>
-                                <p class="card-text text-light">
-                                    Personaliza tu moto con nuestros exclusivos accesorios y modificaciones.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title text-light">Servicio Premium</h5>
-                                <p class="card-text text-light">
-                                    Atención de calidad y garantía en todos nuestros productos y servicios.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+-->
+            <br>
+            
             <!-- Sección de Ubicación -->
             <section id="ubicacion" class="location-section mt-5 mb-5">
                 <h2 class="text-center fw-bold mb-4 section-title">Nuestra Ubicación</h2>
@@ -160,17 +245,15 @@
                     <div class="col-md-6 mb-4">
                         <div class="location-card">
                             <h4 class="fw-bold mb-3">ProCustomShop</h4>
-                            <p><strong>📍 Dirección:</strong> Calle Principal 123, Ciudad, País</p>
-                            <p><strong>📞 Teléfono:</strong> +1 (555) 123-4567</p>
-                            <p><strong>✉️ Email:</strong> info@procustomshop.com</p>
-                            <p><strong>🕐 Horario:</strong> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
-                            <p><strong></strong> Sábado: 10:00 AM - 4:00 PM</p>
+                            <p><strong>📍 Dirección:</strong> Emilio Lamarca 2274, Buenos Aires</p>
+                            <p><strong>🕐 Horario:</strong> Lunes - Viernes: 9:00 HS - 14:00 HS</p>
+                            <p><strong></strong> Sábado: Cerrado</p>
                             <p><strong></strong> Domingo: Cerrado</p>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1ses!2sus!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.143308206258!2d-58.4950568!3d-34.6095769!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc969da755d79%3A0xc6526d10f6095e51!2sPROCUSTOMSHOP!5e0!3m2!1sen!2sar!4v1775962595682!5m2!1sen!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -183,5 +266,10 @@
     
     <!-- Script personalizado -->
     <script src="js/script.js"></script>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/1166410949?text=Hola%20ProCustomShop%20quiero%20información%20sobre%20sus%20productos" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">
+        <img src="images/wpp.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
 </body>
 </html>
