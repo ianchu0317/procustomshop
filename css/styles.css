@@ -842,27 +842,34 @@ footer {
 
     /* --- CARRUSEL PRODUCTOS --- */
     .carousel-img {
-        height: 260px;
-        background-attachment: scroll;
+        height: 420px;
+        object-position: center;
     }
     .carousel-card-info {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 10px;
-        padding: 14px 18px 16px;
+        padding: 12px 16px;
     }
     .carousel-card-info h5 {
-        font-size: 0.88rem;
-        line-height: 1.4;
+        font-size: 0.78rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .carousel-card-info .price {
-        font-size: 0.82rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     .carousel-card-info .btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 16px;
-        font-size: 0.62rem;
+        padding: 9px 14px;
+        font-size: 0.58rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     /* --- SECCIÓN UBICACIÓN --- */
@@ -937,8 +944,8 @@ footer {
     /* Reason cards más compactas */
     .reason-card { padding: 26px 18px; }
 
-    /* Carousel imagen más chica */
-    .carousel-img { height: 220px; }
+    /* Carousel imagen ocupa bien la pantalla */
+    .carousel-img { height: 360px; }
 
     /* Comunidad */
     .community-btn { font-size: 0.62rem; padding: 14px 16px; }
