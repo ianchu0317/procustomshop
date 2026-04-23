@@ -102,6 +102,10 @@ main {
 /* ==========================================
    HERO
    ========================================== */
+.hero-video-mobile {
+    display: none;
+}
+
 .hero-section {
     height: 100vh;
     display: flex;
@@ -777,12 +781,16 @@ footer {
 
     /* --- HERO --- */
     .hero-section {
-        height: 100svh; /* safe viewport height en iOS */
-        padding: 0 24px 56px;
-        background-attachment: scroll; /* fixed causa bugs en iOS Safari */
-        align-items: flex-end;
+        background-image: none; /* saca la imagen fija */
     }
-    .hero-section::after { display: none; } /* quitar texto decorativo enorme */
+    .hero-video-mobile {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
     .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.18em; margin-bottom: 12px; }
     .hero-divider { margin-bottom: 20px; }
     .hero-section h1 {
