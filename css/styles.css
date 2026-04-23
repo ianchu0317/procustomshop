@@ -845,6 +845,19 @@ footer {
         height: 420px;
         object-position: center;
     }
+
+    /* Flechas en el tercio superior de la imagen */
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 30%;
+        bottom: 55%;
+        width: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel-control-prev { left: 0; }
+    .carousel-control-next { right: 0; }
+
     .carousel-card-info {
         flex-direction: row;
         align-items: center;
