@@ -737,27 +737,212 @@ footer {
 .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
 
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE — TABLET (≤992px)
    ========================================== */
 @media (max-width: 992px) {
     .stats-bar { grid-template-columns: 1fr 1fr; }
     .reason-grid { grid-template-columns: 1fr; }
     .reason-card { border-right: none; border-bottom: 1px solid var(--gray-light); }
-    .hero-section { padding: 0 28px 60px; align-items: flex-end; }
+    .hero-section { padding: 0 28px 60px; }
 }
 
+/* ==========================================
+   RESPONSIVE — MOBILE (≤768px)
+   ========================================== */
 @media (max-width: 768px) {
-    .hero-section h1 { font-size: 3rem; }
-    .carousel-img { height: 300px; }
-    .carousel-card-info { flex-wrap: wrap; padding: 16px 20px; }
-    footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
-    .section-wrapper { padding: 64px 0 56px; }
-    .section-title { font-size: 2.5rem; }
+
+    /* --- NAVBAR --- */
+    .navbar { padding: 14px 20px; }
+    .navbar.scrolled { padding: 10px 20px; }
+    .navbar-brand { font-size: 1.4rem; gap: 8px; }
+    .logo-navbar { height: 36px; }
+
+    /* Menú hamburguesa desplegado */
+    .navbar-collapse {
+        background: var(--black);
+        padding: 16px 0 20px;
+        margin-top: 12px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .navbar-dark .nav-link {
+        margin-left: 0;
+        padding: 12px 20px !important;
+        font-size: 0.75rem;
+        border-bottom: none;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .navbar-dark .nav-link:first-child { border-top: none; }
+
+    /* --- HERO --- */
+    .hero-section {
+        height: 100svh; /* safe viewport height en iOS */
+        padding: 0 24px 56px;
+        background-attachment: scroll; /* fixed causa bugs en iOS Safari */
+        align-items: flex-end;
+    }
+    .hero-section::after { display: none; } /* quitar texto decorativo enorme */
+    .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.18em; margin-bottom: 12px; }
+    .hero-divider { margin-bottom: 20px; }
+    .hero-section h1 {
+        font-size: clamp(3.2rem, 14vw, 5rem);
+        line-height: 0.9;
+        margin-bottom: 16px !important;
+    }
+    .hero-section h1 .outline-text { -webkit-text-stroke: 1.5px rgba(255,255,255,0.7); }
+    .hero-section .lead {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-bottom: 28px !important;
+        max-width: 100%;
+    }
+    .hero-section .btn-outline-light {
+        width: 100%;
+        text-align: center;
+        padding: 16px 20px;
+        font-size: 0.68rem;
+    }
+
+    /* --- STATS BAR --- */
+    .stats-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+    .stat-item {
+        padding: 24px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    /* quitar border-bottom en los dos últimos */
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) { border-bottom: none; }
+    .stat-num { font-size: 2.2rem; }
+    .stat-label { font-size: 0.55rem; }
+
+    /* --- SECCIONES GENERALES --- */
+    .section-wrapper { padding: 60px 0 52px; }
+    .section-title {
+        font-size: clamp(2.4rem, 10vw, 3.5rem);
+        margin-bottom: 40px !important;
+        line-height: 0.9;
+    }
+    .section-label { font-size: 0.58rem; }
+
+    /* --- CARDS POR QUÉ ELEGIRNOS --- */
+    .reason-grid { border: none; }
+    .reason-card {
+        padding: 32px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-light);
+        border-left: 3px solid var(--gray-light);
+        transition: border-left-color 0.3s, background 0.3s;
+    }
+    .reason-card:hover { border-left-color: var(--white); }
+    .reason-card:last-child { border-bottom: none; }
+    .reason-card-num { font-size: 3rem; }
+    .reason-card-title { font-size: 1.4rem; }
+    .reason-card-text { font-size: 0.85rem; }
+
+    /* --- CARRUSEL PRODUCTOS --- */
+    .carousel-img {
+        height: 260px;
+        background-attachment: scroll;
+    }
+    .carousel-card-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 18px 16px;
+    }
+    .carousel-card-info h5 {
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+    .carousel-card-info .price {
+        font-size: 0.82rem;
+    }
+    .carousel-card-info .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 0.62rem;
+    }
+
+    /* --- SECCIÓN UBICACIÓN --- */
+    .location-card h4 { font-size: 1.7rem; margin-bottom: 24px; }
+    .location-detail-row { padding: 16px 0; gap: 12px; }
+    .location-detail-value { font-size: 0.88rem; }
+    .map-container iframe { height: 260px; }
+
+    /* --- SECCIÓN COMUNIDAD --- */
+    .comunidad-section {
+        background-attachment: scroll;
+    }
+    .community-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 0.68rem;
+        margin-bottom: 40px;
+    }
+    .community-stats {
+        flex-direction: column;
+        max-width: 100%;
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+    .comm-stat {
+        padding: 18px 24px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        width: 100%;
+    }
+    .comm-stat:last-child { border-bottom: none; }
+    .comm-divider { display: none; }
+    .comm-num { font-size: 1.6rem; }
+    .comm-label { font-size: 0.56rem; text-align: right; }
+
+    /* --- FOOTER --- */
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 32px 24px;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    .footer-logo { font-size: 1.3rem; }
 }
 
-@media (max-width: 576px) {
-    .hero-section { padding: 0 20px 48px; }
+/* ==========================================
+   RESPONSIVE — MOBILE PEQUEÑO (≤480px)
+   ========================================== */
+@media (max-width: 480px) {
+
+    /* Hero más compacto en teléfonos chicos */
+    .hero-section { padding: 0 18px 44px; }
+    .hero-section h1 { font-size: clamp(2.8rem, 16vw, 3.8rem); }
+    .hero-section .lead { font-size: 0.85rem; }
+
+    /* Stats en columna única si son muy pequeños */
     .stats-bar { grid-template-columns: 1fr 1fr; }
-    .stat-item { padding: 24px 20px; }
+    .stat-item { padding: 20px 16px; }
+    .stat-num { font-size: 2rem; }
+
+    /* Sections más ajustadas */
+    .section-wrapper { padding: 48px 0 40px; }
+    .section-title { font-size: clamp(2.2rem, 12vw, 3rem); margin-bottom: 32px !important; }
+
+    /* Reason cards más compactas */
+    .reason-card { padding: 26px 18px; }
+
+    /* Carousel imagen más chica */
+    .carousel-img { height: 220px; }
+
+    /* Comunidad */
+    .community-btn { font-size: 0.62rem; padding: 14px 16px; }
+
+    /* WhatsApp más chico */
+    .whatsapp-btn { bottom: 18px; right: 18px; width: 50px; height: 50px; }
 }
