@@ -752,10 +752,12 @@ footer {
 @media (max-width: 768px) {
 
     /* --- NAVBAR --- */
-    .navbar { padding: 14px 20px; }
-    .navbar.scrolled { padding: 10px 20px; }
+    .navbar { padding: 10px 16px; }
+    .navbar.scrolled { padding: 8px 16px; }
     .navbar-brand { font-size: 1.4rem; gap: 8px; }
-    .logo-navbar { height: 36px; }
+    .navbar-brand strong,
+    .navbar-brand span { display: none; } /* ocultar texto, dejar solo logo */
+    .logo-navbar { height: 38px; }
 
     /* Menú hamburguesa desplegado */
     .navbar-collapse {
