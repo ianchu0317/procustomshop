@@ -620,6 +620,101 @@ footer {
 
 .reveal.visible { opacity: 1; transform: none; }
 
+.comunidad-section {
+    background-image: url('../images/comunidad.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.comunidad-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    z-index: 0;
+}
+
+.comunidad-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.comunidad-section .section-label { color: rgba(255,255,255,0.3); }
+.comunidad-section .section-title { color: var(--white); }
+.comunidad-section .section-title .outline-text {
+    -webkit-text-stroke: 1.5px var(--white);
+    color: transparent;
+}
+
+/* ==========================================
+   SECCIÓN COMUNIDAD
+   ========================================== */
+.community-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--white);
+    border: none;
+    padding: 16px 36px;
+    text-decoration: none;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    margin-bottom: 64px;
+}
+
+.community-btn:hover {
+    background: var(--gray-light);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(255,255,255,0.12);
+}
+
+.community-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.comm-stat {
+    flex: 1;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.comm-divider {
+    width: 1px;
+    height: 56px;
+    background: rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+
+.comm-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--white);
+    line-height: 1;
+}
+
+.comm-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+}
+
 /* ==========================================
    WHATSAPP BTN
    ========================================== */
