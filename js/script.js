@@ -1,39 +1,32 @@
 /* ==========================================
-   SCRIPT PRINCIPAL
+   SCRIPT PRINCIPAL — ProCustomShop
    ========================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('ProCustomShop - Landing Page Iniciada');
-    
-    // Aquí puedes agregar funcionalidades interactivas
-    setupEventListeners();
+document.addEventListener('DOMContentLoaded', function () {
     setupNavbarHideOnScroll();
+    setupRevealOnScroll();
+    setupCountUp();
 });
 
 /* ==========================================
-   CONFIGURAR NAVBAR PARA OCULTARSE AL SCROLL
+   NAVBAR: HIDE ON SCROLL + SCROLLED CLASS
    ========================================== */
-
 function setupNavbarHideOnScroll() {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.getElementById('navbar');
     let lastScrollY = 0;
-    let scrollTimeout;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const currentScrollY = window.scrollY;
 
-        // Mostrar navbar si estamos en el top
+        // Clase "scrolled" para reducir padding
+        navbar.classList.toggle('scrolled', currentScrollY > 40);
+
+        // Ocultar al bajar, mostrar al subir
         if (currentScrollY <= 0) {
             navbar.classList.remove('navbar-hidden');
-            return;
-        }
-
-        // Si scrolleamos hacia abajo, ocultar navbar
-        if (currentScrollY > lastScrollY) {
+        } else if (currentScrollY > lastScrollY + 5) {
             navbar.classList.add('navbar-hidden');
-        } 
-        // Si scrolleamos hacia arriba, mostrar navbar
-        else {
+        } else if (currentScrollY < lastScrollY - 5) {
             navbar.classList.remove('navbar-hidden');
         }
 
@@ -42,47 +35,51 @@ function setupNavbarHideOnScroll() {
 }
 
 /* ==========================================
-   CONFIGURAR LISTENERS DE EVENTOS
+   REVEAL ON SCROLL
    ========================================== */
+function setupRevealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
 
-function setupEventListeners() {
-    // Botón de explorar catálogo
-    const exploreBtn = document.querySelector('.hero-section .btn');
-    if (exploreBtn) {
-        exploreBtn.addEventListener('click', function() {
-            console.log('Botón Explorar Catálogo presionado');
-            // Aquí irá la lógica para explorar el catálogo
-        });
-    }
-
-    // Smooth scroll para los enlaces del navbar
-    const navLinks = document.querySelectorAll('.navbar-nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Solo prevenir comportamiento por defecto si es un ancla local
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(href);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
-            // Si es un enlace externo (http/https), permitir navegación normal
         });
-    });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
 }
 
 /* ==========================================
-   FUNCIONES UTILITARIAS
+   COUNT-UP ANIMADO
    ========================================== */
+function setupCountUp() {
+    const counters = document.querySelectorAll('[data-count]');
 
-// Función para logging (útil para debugging)
-function log(message) {
-    console.log('[ProCustomShop]', message);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                countUp(el, target);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => observer.observe(el));
+}
+
+function countUp(el, target, duration = 1600) {
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+        start = Math.min(start + step, target);
+        el.textContent = start.toLocaleString('es-AR');
+        if (start >= target) {
+            el.textContent = target.toLocaleString('es-AR') + '+';
+            clearInterval(timer);
+        }
+    }, 16);
 }
