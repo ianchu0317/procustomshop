@@ -945,10 +945,46 @@ footer {
     }
 
     /* --- SECCIÓN UBICACIÓN --- */
-    .location-card h4 { font-size: 1.7rem; margin-bottom: 24px; }
-    .location-detail-row { padding: 16px 0; gap: 12px; }
-    .location-detail-value { font-size: 0.88rem; }
-    .map-container iframe { height: 260px; }
+
+    #ubicacion .row {
+        gap: 0 !important;
+    }
+
+    .location-card h4 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .location-detail-row {
+        padding: 6px 0;
+        gap: 8px;
+        border-bottom: 1px solid var(--gray-light);
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .location-detail-row:last-child {
+        border-bottom: none;
+    }
+
+    .location-detail-label {
+        font-size: 0.56rem;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .location-detail-value {
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+
+    .map-container {
+        margin-top: 10px;
+    }
+
+    .map-container iframe {
+        height: 200px;
+    }
 
     /* --- SECCIÓN COMUNIDAD --- */
     .comunidad-section {
