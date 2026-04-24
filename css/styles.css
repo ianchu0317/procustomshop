@@ -102,6 +102,10 @@ main {
 /* ==========================================
    HERO
    ========================================== */
+.hero-video-mobile {
+    display: none;
+}
+
 .hero-section {
     height: 100vh;
     display: flex;
@@ -659,9 +663,9 @@ footer {
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--black);
-    background: var(--white);
-    border: none;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
     padding: 16px 36px;
     text-decoration: none;
     transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
@@ -669,8 +673,8 @@ footer {
 }
 
 .community-btn:hover {
-    background: var(--gray-light);
-    color: var(--black);
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 10px 32px rgba(255,255,255,0.12);
 }
@@ -752,10 +756,12 @@ footer {
 @media (max-width: 768px) {
 
     /* --- NAVBAR --- */
-    .navbar { padding: 14px 20px; }
-    .navbar.scrolled { padding: 10px 20px; }
+    .navbar { padding: 10px 16px; }
+    .navbar.scrolled { padding: 8px 16px; }
     .navbar-brand { font-size: 1.4rem; gap: 8px; }
-    .logo-navbar { height: 36px; }
+    .navbar-brand strong,
+    .navbar-brand span { display: none; } /* ocultar texto, dejar solo logo */
+    .logo-navbar { height: 38px; }
 
     /* Menú hamburguesa desplegado */
     .navbar-collapse {
@@ -775,12 +781,16 @@ footer {
 
     /* --- HERO --- */
     .hero-section {
-        height: 100svh; /* safe viewport height en iOS */
-        padding: 0 24px 56px;
-        background-attachment: scroll; /* fixed causa bugs en iOS Safari */
-        align-items: flex-end;
+        background-image: none; /* saca la imagen fija */
     }
-    .hero-section::after { display: none; } /* quitar texto decorativo enorme */
+    .hero-video-mobile {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
     .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.18em; margin-bottom: 12px; }
     .hero-divider { margin-bottom: 20px; }
     .hero-section h1 {
@@ -826,78 +836,188 @@ footer {
     .section-label { font-size: 0.58rem; }
 
     /* --- CARDS POR QUÉ ELEGIRNOS --- */
-    .reason-grid { border: none; }
-    .reason-card {
-        padding: 32px 24px;
-        border-right: none;
-        border-bottom: 1px solid var(--gray-light);
-        border-left: 3px solid var(--gray-light);
-        transition: border-left-color 0.3s, background 0.3s;
+    .reason-grid {
+        grid-template-columns: 1fr;   /* apiladas, pero compactas */
+        gap: 0;
     }
-    .reason-card:hover { border-left-color: var(--white); }
-    .reason-card:last-child { border-bottom: none; }
-    .reason-card-num { font-size: 3rem; }
-    .reason-card-title { font-size: 1.4rem; }
-    .reason-card-text { font-size: 0.85rem; }
+
+    .reason-card {
+        display: grid;
+        grid-template-columns: 40px 1fr;   /* num | contenido */
+        grid-template-rows: auto auto;
+        column-gap: 12px;
+        align-items: start;
+        padding: 14px 16px;
+        border-left: 3px solid var(--black);
+        border-bottom: 1px solid var(--gray-light);
+    }
+
+    .reason-card:last-child {
+        border-bottom: none;
+    }
+
+    /* Número ocupa toda la altura izquierda */
+    .reason-card-num {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        font-size: 1.1rem;
+        align-self: center;
+        color: var(--gray-mid);
+    }
+
+    /* Icono desaparece en mobile para ganar espacio */
+    .reason-card-icon {
+        display: none;
+    }
+
+    /* Título y texto comprimidos */
+    .reason-card-title {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .reason-card-text {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 0.78rem;
+        line-height: 1.45;
+        color: var(--gray-mid);
+        margin: 0;
+    }
+
+    /* Hover se mantiene pero simplificado */
+    .reason-card:hover {
+        background: var(--black);
+        border-left-color: var(--white);
+    }
+
+    .reason-card:hover .reason-card-title,
+    .reason-card:hover .reason-card-text,
+    .reason-card:hover .reason-card-num {
+        color: var(--white);
+    }
 
     /* --- CARRUSEL PRODUCTOS --- */
     .carousel-img {
-        height: 260px;
-        background-attachment: scroll;
+        height: 420px;
+        object-position: center;
     }
+
+    /* Flechas en el tercio superior de la imagen */
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 30%;
+        bottom: 55%;
+        width: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel-control-prev { left: 0; }
+    .carousel-control-next { right: 0; }
+
     .carousel-card-info {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 10px;
-        padding: 14px 18px 16px;
+        padding: 12px 16px;
     }
     .carousel-card-info h5 {
-        font-size: 0.88rem;
-        line-height: 1.4;
+        font-size: 0.78rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .carousel-card-info .price {
-        font-size: 0.82rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     .carousel-card-info .btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 16px;
-        font-size: 0.62rem;
+        padding: 9px 14px;
+        font-size: 0.58rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     /* --- SECCIÓN UBICACIÓN --- */
-    .location-card h4 { font-size: 1.7rem; margin-bottom: 24px; }
-    .location-detail-row { padding: 16px 0; gap: 12px; }
-    .location-detail-value { font-size: 0.88rem; }
-    .map-container iframe { height: 260px; }
+
+    #ubicacion .row {
+        gap: 0 !important;
+    }
+
+    .location-card h4 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .location-detail-row {
+        padding: 6px 0;
+        gap: 8px;
+        border-bottom: 1px solid var(--gray-light);
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .location-detail-row:last-child {
+        border-bottom: none;
+    }
+
+    .location-detail-label {
+        font-size: 0.56rem;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .location-detail-value {
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+
+    .map-container {
+        margin-top: 10px;
+    }
+
+    .map-container iframe {
+        height: 200px;
+    }
 
     /* --- SECCIÓN COMUNIDAD --- */
     .comunidad-section {
+        padding: 60px 0 !important;
         background-attachment: scroll;
     }
-    .community-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 20px;
-        font-size: 0.68rem;
-        margin-bottom: 40px;
+
+    .comunidad-section p {
+        font-size: 0.82rem !important;
+        margin-bottom: 28px !important;
+        line-height: 1.55;
     }
+
+    
+
     .community-stats {
         flex-direction: column;
         max-width: 100%;
         border: 1px solid rgba(255,255,255,0.08);
     }
+
     .comm-stat {
-        padding: 18px 24px;
+        padding: 12px 20px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid rgba(255,255,255,0.07);
         width: 100%;
     }
+
     .comm-stat:last-child { border-bottom: none; }
     .comm-divider { display: none; }
-    .comm-num { font-size: 1.6rem; }
+    .comm-num { font-size: 1.3rem; }
     .comm-label { font-size: 0.56rem; text-align: right; }
 
     /* --- FOOTER --- */
@@ -937,8 +1057,8 @@ footer {
     /* Reason cards más compactas */
     .reason-card { padding: 26px 18px; }
 
-    /* Carousel imagen más chica */
-    .carousel-img { height: 220px; }
+    /* Carousel imagen ocupa bien la pantalla */
+    .carousel-img { height: 360px; }
 
     /* Comunidad */
     .community-btn { font-size: 0.62rem; padding: 14px 16px; }
