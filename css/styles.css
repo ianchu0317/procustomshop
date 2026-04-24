@@ -836,19 +836,68 @@ footer {
     .section-label { font-size: 0.58rem; }
 
     /* --- CARDS POR QUÉ ELEGIRNOS --- */
-    .reason-grid { border: none; }
-    .reason-card {
-        padding: 32px 24px;
-        border-right: none;
-        border-bottom: 1px solid var(--gray-light);
-        border-left: 3px solid var(--gray-light);
-        transition: border-left-color 0.3s, background 0.3s;
+    .reason-grid {
+        grid-template-columns: 1fr;   /* apiladas, pero compactas */
+        gap: 0;
     }
-    .reason-card:hover { border-left-color: var(--white); }
-    .reason-card:last-child { border-bottom: none; }
-    .reason-card-num { font-size: 3rem; }
-    .reason-card-title { font-size: 1.4rem; }
-    .reason-card-text { font-size: 0.85rem; }
+
+    .reason-card {
+        display: grid;
+        grid-template-columns: 40px 1fr;   /* num | contenido */
+        grid-template-rows: auto auto;
+        column-gap: 12px;
+        align-items: start;
+        padding: 14px 16px;
+        border-left: 3px solid var(--black);
+        border-bottom: 1px solid var(--gray-light);
+    }
+
+    .reason-card:last-child {
+        border-bottom: none;
+    }
+
+    /* Número ocupa toda la altura izquierda */
+    .reason-card-num {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        font-size: 1.1rem;
+        align-self: center;
+        color: var(--gray-mid);
+    }
+
+    /* Icono desaparece en mobile para ganar espacio */
+    .reason-card-icon {
+        display: none;
+    }
+
+    /* Título y texto comprimidos */
+    .reason-card-title {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .reason-card-text {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 0.78rem;
+        line-height: 1.45;
+        color: var(--gray-mid);
+        margin: 0;
+    }
+
+    /* Hover se mantiene pero simplificado */
+    .reason-card:hover {
+        background: var(--black);
+        border-left-color: var(--white);
+    }
+
+    .reason-card:hover .reason-card-title,
+    .reason-card:hover .reason-card-text,
+    .reason-card:hover .reason-card-num {
+        color: var(--white);
+    }
 
     /* --- CARRUSEL PRODUCTOS --- */
     .carousel-img {
