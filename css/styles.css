@@ -663,9 +663,9 @@ footer {
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--black);
-    background: var(--white);
-    border: none;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
     padding: 16px 36px;
     text-decoration: none;
     transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
@@ -673,8 +673,8 @@ footer {
 }
 
 .community-btn:hover {
-    background: var(--gray-light);
-    color: var(--black);
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 10px 32px rgba(255,255,255,0.12);
 }
@@ -988,31 +988,36 @@ footer {
 
     /* --- SECCIÓN COMUNIDAD --- */
     .comunidad-section {
+        padding: 60px 0 !important;
         background-attachment: scroll;
     }
-    .community-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 20px;
-        font-size: 0.68rem;
-        margin-bottom: 40px;
+
+    .comunidad-section p {
+        font-size: 0.82rem !important;
+        margin-bottom: 28px !important;
+        line-height: 1.55;
     }
+
+    
+
     .community-stats {
         flex-direction: column;
         max-width: 100%;
         border: 1px solid rgba(255,255,255,0.08);
     }
+
     .comm-stat {
-        padding: 18px 24px;
+        padding: 12px 20px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid rgba(255,255,255,0.07);
         width: 100%;
     }
+
     .comm-stat:last-child { border-bottom: none; }
     .comm-divider { display: none; }
-    .comm-num { font-size: 1.6rem; }
+    .comm-num { font-size: 1.3rem; }
     .comm-label { font-size: 0.56rem; text-align: right; }
 
     /* --- FOOTER --- */
